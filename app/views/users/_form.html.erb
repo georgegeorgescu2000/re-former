@@ -1,29 +1,38 @@
-<%= form_with model: user do |form| %>
-    <div>
+    <%= form_with model: user, local: true, class: "us1" do |form| %>
+    <div class="us1">
         <%= form.label :username %><br>
         <%= form.text_field :username %>
-        <% user.errors.full_messages_for(:username).each do |message| %>
-        
-            <div><%= message %> </div>
+        <% user.errors.full_messages_for(:username).each do |message| %>        
+            <div><%= message %></div>
             <% end %>
     </div>
-    <div>
+   
+    <div class="us1">
         <%= form.label :email %><br>
-        <%= form.text_field :email %>
-        <% user.errors.full_messages_for(:email).each do |message| %>
-        
-            <div><%= message %> </div>
+        <%= form.text_field :email %>      
+        <% user.errors.full_messages_for(:email).each do |message| %>        
+            <div>
+            <li>
+            <%= message %>
+            </li>
+            </div>
             <% end %>
     </div>
-    <div>
+    
+    <div class="us1">
         <%= form.label :password %><br>
         <%= form.text_field :password %>
         <% user.errors.full_messages_for(:password).each do |message| %>
-        
-            <div><%= message %> </div>
+            <div>
+            <li>
+            <%= message %>
+            </li>
+            </div>
             <% end %>
     
     </div>
+    
+    <li></li>
     
     <div>
     
